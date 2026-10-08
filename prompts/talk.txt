@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，按最终发布页更新讲稿、提示卡和问答。
+用我能自然讲出来的话，帮我准备彩排。

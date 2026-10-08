@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，按已确认的下一张任务卡开始开发。
+一次做一小步，告诉我怎么试用，并保存进度。

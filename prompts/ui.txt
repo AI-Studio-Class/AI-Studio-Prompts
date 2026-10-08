@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我把当前产品的界面变得更清楚、好看。
+沿用产品名称和 Logo，保留已有功能。

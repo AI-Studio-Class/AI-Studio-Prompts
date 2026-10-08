@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我估算当前项目的 TAM。
+沿用已有项目信息，算完帮我保存结果。

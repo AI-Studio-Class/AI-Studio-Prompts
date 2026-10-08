@@ -1,0 +1,17 @@
+{
+  "install": "请从 https://github.com/AI-Studio-Class/AI-Studio-Prompts 下载完整课堂资源，按 SKILLS.md 安装或更新三个 Skills 并校验。\n公开资源无需 GitHub 授权；本次只准备 Skills，不创建或上传学生项目。",
+  "idea": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-idea/SKILL.md 的流程，和我一起打磨当前项目的 AI 创业方向。\n我们用约 20 分钟，选出两天先做的一条主线。",
+  "tam": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我估算当前项目的 TAM。\n沿用已有项目信息，算完帮我保存结果。",
+  "brand": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮当前产品取名、做 Logo，最后选一句 Slogan。\n给我几个建议并解释各自的方向和理由，等我选定后帮我保存。",
+  "onepager": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，把当前想法整理成一页 One-pager。\n带我核对，确认后保存。",
+  "prd": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，基于 One-pager 带我逐步完成需求文档和开发计划。\n每一步告诉我怎样验收、接下来做什么，先不写代码。",
+  "continue": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，接着上次未完成的需求文档和开发计划继续。\n准备好第一张开发任务卡，先不写代码。",
+  "build": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，按已确认的下一张任务卡开始开发。\n一次做一小步，告诉我怎么试用，并保存进度。",
+  "fix": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我修复下面这个问题。\n修好后带我试一次，并保存进度。\n[补充遇到的问题，可附截图]",
+  "iterate": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我找出当前产品最值得改进的一点。\n让我选择后再动手，完成后带我试用并保存进度。",
+  "ui": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我把当前产品的界面变得更清楚、好看。\n沿用产品名称和 Logo，保留已有功能。",
+  "save": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，保存这次项目进度。\n告诉我哪些已完成、还有什么问题，以及下次从哪里继续。",
+  "pitch": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，把当前项目整理成完整的产品发布包。\n沿用已有资料和真实进度，帮我做发布页、讲稿和问答准备。",
+  "pitch-visual": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，优化现有发布页的视觉。\n保留产品事实和故事内容，让每一页完整、清楚地显示。",
+  "talk": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，按最终发布页更新讲稿、提示卡和问答。\n用我能自然讲出来的话，帮我准备彩排。"
+}

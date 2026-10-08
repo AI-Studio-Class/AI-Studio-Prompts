@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我找出当前产品最值得改进的一点。
+让我选择后再动手，完成后带我试用并保存进度。

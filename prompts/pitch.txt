@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，把当前项目整理成完整的产品发布包。
+沿用已有资料和真实进度，帮我做发布页、讲稿和问答准备。

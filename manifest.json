@@ -1,0 +1,54 @@
+{
+  "version": "1.2.0",
+  "repository": "AI-Studio-Class/AI-Studio-Prompts",
+  "ref": "main",
+  "skills": [
+    {
+      "name": "aistudio-idea",
+      "path": "skills/aistudio-idea",
+      "files": {
+        ".gitignore": "53f0c100a33a56ebada040287b3d0f5dbab21c6ec6b66209fec5515c508f1144",
+        "README.md": "bf517b1dc25d1ff2a1e79192fc739d7934d4abe876bfc015cb5897f05eee3980",
+        "SKILL.md": "73ba300581f23eb7771031e58e7d0f9087c3ffe7ef74d3ce770bcfa20abfa4a5",
+        "agents/openai.yaml": "bbfb88d1c4ab2abeaf245a9c86ba2b448863f7c7956f18394c793f9983f4a76f",
+        "references/classroom-handoff.md": "d7be42260e7ec7c095bf025b5ae9579f6de2117ce6819b9a788a64d50c65bc8f",
+        "references/dialogue-guide.md": "3c723d2b2e74cfb2967164a4092a2765ef6de525d74caaca9f621322e460c954",
+        "references/product-positioning.md": "9f4c93d2a306b33e4844f8cb7600c1d0e191b510bb52aec36a21c0b436866a26",
+        "references/project-contract.md": "819b3021723242241aa4d46e39c51072b882e31f2df335e50a530078603ea644",
+        "templates/项目主文件.md": "8b281f805bdb76b35a09f10d1664fb8479028e04099b9a82ee7a2705eca10699"
+      }
+    },
+    {
+      "name": "aistudio-project",
+      "path": "skills/aistudio-project",
+      "files": {
+        "SKILL.md": "e2867ae28db249682600edbb15086c37a716399374f424d25669cccb2a524878",
+        "agents/openai.yaml": "875cfe8e1111203895c1a16cbb8484ef5c4012972fd441810df5be68f38f656f",
+        "references/advisor-lenses.md": "9e5637a1a3e738a1f02b6f74ee48bd2b002e2680a8dc6d7acd19ea514f372fb0",
+        "references/development.md": "d155d6964af7ed827033871de05f234c976685bb845d5378b40945e0afac7d58",
+        "references/project-contract.md": "819b3021723242241aa4d46e39c51072b882e31f2df335e50a530078603ea644",
+        "templates/项目主文件.md": "8b281f805bdb76b35a09f10d1664fb8479028e04099b9a82ee7a2705eca10699"
+      }
+    },
+    {
+      "name": "pitch",
+      "path": "skills/pitch",
+      "files": {
+        "LICENSE.txt": "acb9134781dd0ca8840be62aecf38ddf0802e59db33004f2220f90b8c35a77d4",
+        "SKILL.md": "68b633aa2e8c131bca5c8c6b124edcd6c745bbcb94536a7fd30005ee4803ce91",
+        "agents/openai.yaml": "a7d1185af941b92b8192b344012e2801fe3acd52a4c37dd91e6eb8dc4932cff1",
+        "assets/pitch-template.html": "16aad32c2381bfdbb0eed095f7328bf6d98cf07b579f1a74ecbb4aea6b56c94d",
+        "assets/style-gallery.html": "b77601cc441f49d8e6accdbc59e86e04c1df551820ec7305b1a61e3260bfd935",
+        "references/html-contract.md": "f7fb1f87d68af922442cfbf3b2e37d77cf288a5fe78c5d0773009fa224b12dac",
+        "references/presentation-updates.md": "ae51ccb42047cf70ada4a0cbb6082bf75f01482f5b1df48c4ef6e807a22c9a84",
+        "references/project-contract.md": "819b3021723242241aa4d46e39c51072b882e31f2df335e50a530078603ea644",
+        "references/style-catalog.md": "524f67d0e930d2a927c992b5872d91f6ce46d54a4f687bdb3f24f4b360e40736",
+        "references/talk-track-contract.md": "f4f8b5d86ee660c9d4325fe86418b4b8bcf8331fe743651ec47d683ff2c40bc0",
+        "references/workflow-contract.md": "e3e5a50c79e241d0a50510207ce14f1e0c9a655beab24c2bebc561f1563aebae",
+        "scripts/scan_project.py": "b989cb591a286b51f277a7167738bf0fda39dbfa7062e1300272b2e6f7859c9f",
+        "scripts/validate_outputs.py": "040737a0db3933abcc30a7c75c58c105dc1e2c842f810957d81186ffd10d8b0e",
+        "templates/项目主文件.md": "8b281f805bdb76b35a09f10d1664fb8479028e04099b9a82ee7a2705eca10699"
+      }
+    }
+  ]
+}

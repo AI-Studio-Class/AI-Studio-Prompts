@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮当前产品取名、做 Logo，最后选一句 Slogan。
+给我几个建议并解释各自的方向和理由，等我选定后帮我保存。

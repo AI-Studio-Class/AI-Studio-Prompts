@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，接着上次未完成的需求文档和开发计划继续。
+准备好第一张开发任务卡，先不写代码。

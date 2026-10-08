@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，优化现有发布页的视觉。
+保留产品事实和故事内容，让每一页完整、清楚地显示。

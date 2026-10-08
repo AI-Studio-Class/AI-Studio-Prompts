@@ -1,0 +1,2 @@
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-idea/SKILL.md 的流程，和我一起打磨当前项目的 AI 创业方向。
+我们用约 20 分钟，选出两天先做的一条主线。

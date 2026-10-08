@@ -1,0 +1,4 @@
+interface:
+  display_name: "Founder Pitch Studio"
+  short_description: "从项目进度自动生成完整 Founder Pitch 发布包"
+  default_prompt: "Use $pitch to read this project, ask me to choose one visual style, and generate the complete Founder Pitch package."

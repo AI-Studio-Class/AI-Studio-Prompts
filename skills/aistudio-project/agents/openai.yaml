@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Studio 项目教练"
+  short_description: "承接本地项目主文件，完成市场估算、命名与标志、开工文档和每轮开发记录"
+  default_prompt: "请用 $aistudio-project，先读项目主文件.md，接着当前项目的下一步继续。"

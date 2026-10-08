@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Founder Pitch Studio｜选择视觉风格</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#eef1f5;color:#111827;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}main{width:min(1480px,calc(100% - 48px));margin:0 auto;padding:46px 0 70px}.head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:28px}.eyebrow{color:#2457e6;font-size:13px;font-weight:900}.head h1{margin:8px 0 4px;font-size:42px;letter-spacing:0}.head p{margin:0;color:#667085;font-size:17px}.status{min-width:300px;padding:14px 18px;border-left:5px solid #2457e6;background:#fff;font-weight:800}.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}.style{min-width:0;padding:0;border:1px solid #cfd6e2;background:#fff;text-align:left;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}.style:hover,.style:focus-visible{transform:translateY(-3px);box-shadow:0 12px 28px rgba(17,24,39,.14);outline:3px solid rgba(36,87,230,.22)}.preview{height:178px;padding:18px;overflow:hidden;position:relative}.preview small{display:block;margin-bottom:17px;font-size:9px;font-weight:900;letter-spacing:1px}.preview strong{display:block;max-width:92%;font-size:23px;line-height:1.08}.preview .rule{width:46px;height:5px;margin:13px 0;background:currentColor}.preview .mock{display:grid;grid-template-columns:1fr 1.25fr;gap:8px;margin-top:18px}.preview .mock i{display:block;height:42px;border:1px solid currentColor;opacity:.58}.meta{min-height:104px;padding:15px 17px 18px;border-top:1px solid #d9dee8}.meta b{display:block;font-size:16px}.meta span{display:block;margin-top:6px;color:#667085;font-size:13px;line-height:1.45}.s1 .preview{background:#f7f6f2;color:#111827;border-top:7px solid #2457e6}.s1 .mock i:first-child{border-left:8px solid #ed4b3a}.s2 .preview{background:#080d17;color:#f8fafc;border-top:7px solid #4d7cfe}.s2 .mock i{background:#141d2d;border-color:#35c99a}.s3 .preview{background:#f3f5f4;color:#101516;border-top:7px solid #0d5147}.s3 .mock i{border-style:dashed}.s3 .mock i:last-child{border-color:#e6493d}.s4 .preview{background:#123d75;color:#f8fbff;border-top:7px solid #f28c28}.s4 .mock i{border-color:#46b5d1}.s5 .preview{background:#f5f1e8;color:#111;border-top:7px solid #c8322e;font-family:Georgia,"Songti SC",serif}.s5 .mock{grid-template-columns:1.4fr .6fr}.s6 .preview{background:#121820;color:#f4f7f9;border-top:7px solid #4fc08d}.s6 .mock i:first-child{border:2px solid #ff8a34}.s7 .preview{background:#fafaf8;color:#151515;border-top:7px solid #2448d8}.s7 .mock{grid-template-columns:1.7fr .3fr}.s7 .mock i:first-child{height:54px;border:5px solid #e54836}.s8 .preview{background:#fff;color:#17233c;border-top:7px solid #16845b}.s8 .mock{grid-template-columns:repeat(3,1fr)}.s8 .mock i{height:48px;border-top:7px solid #2f64d6}.s9 .preview{background:#fbfaf6;color:#1c3557;border-top:7px solid #f3c94b}.s9 .rule{background:#d94b3d}.s9 .mock i:first-child{transform:rotate(-2deg)}.s10 .preview{background:#0d0f12;color:#f5f2ea;border-top:7px solid #d8a53a}.s10 .mock{grid-template-columns:1.6fr .4fr}.s10 .mock i:first-child{border:0;background:#315aef}.s10 .mock i:last-child{border:0;background:#eb5142}@media(max-width:1120px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:720px){main{width:min(100% - 28px,1480px);padding-top:26px}.head{display:block}.status{margin-top:18px;min-width:0}.grid{grid-template-columns:1fr}.preview{height:220px}}
+  </style>
+</head>
+<body>
+  <main>
+    <header class="head"><div><div class="eyebrow">FOUNDER PITCH STUDIO · STYLE 01–10</div><h1>只选一种视觉语言</h1><p>点击卡片，会复制一句可以直接发给 Codex 的选择。</p></div><div class="status" id="status">还没有选择风格</div></header>
+    <section class="grid" id="grid"></section>
+  </main>
+  <script>
+    const styles=[
+      ['s1','Studio 编辑部白','均衡、克制，适合大多数项目。'],
+      ['s2','午夜产品发布会','深色舞台，最突出 Demo。'],
+      ['s3','未来实验室','适合 AI 实验、测试和待验证证据。'],
+      ['s4','工程蓝图工作台','适合流程、系统和构建逻辑。'],
+      ['s5','Founder 头版新闻','适合真实人物故事与社会观察。'],
+      ['s6','任务控制中心','适合步骤、状态和工作流产品。'],
+      ['s7','产品展览馆','适合视觉成果和产品本身很强的项目。'],
+      ['s8','投资人数据室','适合有可靠数字、比较和测试的项目。'],
+      ['s9','真实观察手记','适合从观察、访谈和迭代出发的项目。'],
+      ['s10','电影式 Founder 故事','适合场景鲜明、转变清楚的产品故事。']
+    ];
+    const grid=document.getElementById('grid'),status=document.getElementById('status');
+    styles.forEach((item,index)=>{
+      const button=document.createElement('button');button.className=`style ${item[0]}`;button.type='button';
+      button.innerHTML=`<div class="preview"><small>STYLE ${String(index+1).padStart(2,'0')}</small><strong>${item[1]}</strong><div class="rule"></div><div class="mock"><i></i><i></i><i></i></div></div><div class="meta"><b>${index+1}. ${item[1]}</b><span>${item[2]}</span></div>`;
+      button.addEventListener('click',async()=>{const text=`我选择第 ${index+1} 种风格：${item[1]}。请继续生成，不需要再问我其他问题。`;status.textContent=`已选择：${text}`;try{await navigator.clipboard.writeText(text);status.textContent=`已复制：${text}`}catch{}});grid.appendChild(button);
+    });
+  </script>
+</body>
+</html>

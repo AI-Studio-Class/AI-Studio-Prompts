@@ -1,0 +1,2 @@
+请从 https://github.com/AI-Studio-Class/AI-Studio-Prompts 下载完整课堂资源，按 SKILLS.md 安装或更新三个 Skills 并校验。
+公开资源无需 GitHub 授权；本次只准备 Skills，不创建或上传学生项目。

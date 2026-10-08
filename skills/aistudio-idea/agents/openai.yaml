@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Studio 创业方向教练"
+  short_description: "用约二十分钟共同打磨有特色的 AI 产品定位，并选出两天开发的一条主线"
+  default_prompt: "请用 $aistudio-idea，花约 20 分钟接着我的想法共同打磨 AI 产品定位；引导为主，也给具体建议，最后由我选出两天开发主线，并保存创业想法.md、更新项目主文件.md。"

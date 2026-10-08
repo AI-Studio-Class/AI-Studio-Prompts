@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{PROJECT_NAME}}｜Founder Pitch</title>
+  <style>
+    :root {
+      --ink: #131827;
+      --muted: #647084;
+      --line: #d8dee8;
+      --paper: #ffffff;
+      --soft: #f3f6fa;
+      --blue: #2457e6;
+      --red: #e44b35;
+      --green: #14815f;
+      --amber: #a66b00;
+      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .site-head { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+    .site-head .wrap { min-height: 64px; display: flex; align-items: center; gap: 24px; }
+    .brand { font-size: 15px; font-weight: 900; }
+    nav { margin-left: auto; display: flex; gap: 18px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 800; }
+    section { padding: 76px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 64px; }
+    .hero { min-height: 72vh; display: grid; align-items: center; background: var(--soft); }
+    .eyebrow { color: var(--blue); font-size: 13px; font-weight: 900; }
+    h1 { max-width: 900px; margin: 14px 0 20px; font-size: 60px; line-height: 1.08; letter-spacing: 0; }
+    h2 { margin: 0 0 18px; font-size: 38px; line-height: 1.15; letter-spacing: 0; }
+    .lead { max-width: 780px; margin: 0; color: var(--muted); font-size: 22px; line-height: 1.55; }
+    .section-grid { display: grid; grid-template-columns: minmax(240px,.75fr) minmax(0,1.25fr); gap: 64px; align-items: start; }
+    .section-no { color: var(--red); font-size: 14px; font-weight: 900; }
+    .body-copy { font-size: 20px; line-height: 1.65; }
+    .body-copy p:first-child { margin-top: 0; }
+    .fact-list { margin: 24px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .fact-list li { padding: 14px 16px; border-left: 5px solid var(--blue); background: var(--soft); font-weight: 800; }
+    .tag { display: inline-block; margin-right: 8px; padding: 4px 8px; border: 1px solid currentColor; font-size: 12px; font-weight: 900; }
+    .tag.real { color: var(--green); }
+    .tag.estimate { color: var(--amber); }
+    .tag.verify { color: var(--red); }
+    .demo-frame { min-height: 420px; display: grid; place-items: center; border: 2px solid var(--ink); background: var(--soft); text-align: center; }
+    .demo-frame img { display: block; width: 100%; height: auto; object-fit: contain; }
+    .demo-placeholder { max-width: 460px; padding: 32px; }
+    .demo-placeholder strong { display: block; margin-bottom: 10px; font-size: 24px; }
+    .next-list { counter-reset: next; margin: 0; padding: 0; list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .next-list li { counter-increment: next; display: grid; grid-template-columns: 70px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); font-size: 20px; font-weight: 800; }
+    .next-list li::before { content: "0" counter(next); color: var(--blue); }
+    .pitch-controls { position: fixed; z-index: 20; right: 20px; bottom: 18px; display: flex; align-items: center; border: 1px solid var(--line); background: rgba(255,255,255,.96); box-shadow: 0 10px 26px rgba(19,24,39,.12); }
+    .pitch-controls button { width: 44px; height: 42px; border: 0; background: var(--paper); color: var(--ink); font-size: 20px; font-weight: 900; cursor: pointer; }
+    .pitch-controls button:hover { color: var(--blue); background: #edf2ff; }
+    .pitch-controls button:disabled { color: #b8c0cc; background: #f7f8fa; cursor: default; }
+    .pitch-count { min-width: 66px; text-align: center; color: var(--muted); font-size: 12px; font-weight: 900; }
+    footer { padding: 30px 0; color: var(--muted); font-size: 13px; }
+    @media (max-width: 760px) {
+      nav { display: none; }
+      section { padding: 52px 0; }
+      h1 { font-size: 40px; }
+      h2 { font-size: 30px; }
+      .lead, .body-copy { font-size: 18px; }
+      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      .hero { min-height: auto; padding: 90px 0; }
+      .demo-frame { min-height: 280px; }
+      .pitch-controls { right: 12px; bottom: 12px; }
+    }
+    @media screen {
+      html, body { width: 100%; height: 100%; overflow: hidden; background: #080d17; }
+      .site-head, footer { display: none; }
+      main { position: fixed; inset: 0; overflow: hidden; }
+      main > section { display: none; position: absolute; top: 50%; left: 50%; width: 1600px; height: 900px; min-height: 900px; margin: 0; padding: 100px 92px 70px; overflow: hidden; transform: translate(-50%,-50%) scale(var(--pitch-scale,1)); transform-origin: center center; border: 0; background: var(--paper); box-shadow: 0 24px 80px rgba(0,0,0,.35); }
+      main > section.pitch-active { display: block; }
+      main > section::before { content: "{{PROJECT_NAME}}  ·  FOUNDER PITCH"; position: absolute; left: 92px; top: 32px; color: var(--muted); font-size: 13px; font-weight: 900; letter-spacing: 1px; }
+      main > section.hero { display: none; width: 1600px; height: 900px; min-height: 900px; padding-top: 100px; background: var(--soft); }
+      main > section.hero.pitch-active { display: grid; }
+      .wrap { width: 100%; }
+      .hero .wrap { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+      main > section:not(.hero) > .wrap { height: 100%; }
+      .hero h1 { max-width: 1180px; font-size: 76px; }
+      .hero .lead { max-width: 1050px; font-size: 27px; }
+      .hero .cover-mark { margin-top: auto; padding-top: 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: 18px; font-weight: 800; }
+      .section-grid { grid-template-columns: 430px 1fr; gap: 70px; align-items: center; align-content: center; }
+      h2 { font-size: 58px; }
+      .body-copy { font-size: 24px; line-height: 1.55; }
+      .fact-list { margin-top: 22px; gap: 11px; }
+      .fact-list li { padding: 15px 18px; }
+      .demo-frame { height: 610px; min-height: 0; }
+      .next-list li { padding: 26px 0; font-size: 25px; }
+      .pitch-controls { right: 18px; bottom: 16px; }
+    }
+    @media print {
+      .site-head, .pitch-controls { display: none; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-head">
+    <div class="wrap">
+      <div class="brand">{{PROJECT_NAME}}</div>
+      <nav aria-label="页面导航">
+        <a href="#problem">问题</a><a href="#solution">方案</a><a href="#value">价值</a><a href="#demo">Demo</a><a href="#next">下一步</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="cover">
+      <div class="wrap">
+        <div class="eyebrow">FOUNDER PITCH</div>
+        <h1>{{PROJECT_NAME}}</h1>
+        <p class="lead">{{PRODUCT_PROMISE}}</p>
+        <div class="cover-mark">{{FOUNDER_NAME}} · {{STYLE_NAME}}</div>
+      </div>
+    </section>
+
+    <section id="problem">
+      <div class="wrap section-grid">
+        <div><div class="section-no">01</div><h2>{{PROBLEM_HEADLINE}}</h2></div>
+        <div class="body-copy">
+          <p>{{WHO_WHEN_BLOCK_CHANGE}}</p>
+          <ul class="fact-list">
+            <li>{{PROBLEM_EVIDENCE_1}}</li><li>{{PROBLEM_EVIDENCE_2}}</li><li>{{PROBLEM_EVIDENCE_3}}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="wrap section-grid">
+        <div><div class="section-no">02</div><h2>拟采用的解决方案</h2></div>
+        <div class="body-copy">
+          <p>{{SOLUTION_ONE_SENTENCE}}</p>
+          <ul class="fact-list">
+            <li>{{CORE_FUNCTION_1}}</li><li>{{CORE_FUNCTION_2}}</li><li>{{CORE_FUNCTION_3}}</li>
+          </ul>
+          <p>{{MAIN_USER_PATH}}</p>
+          <p>{{HUMAN_SOFTWARE_BOUNDARY}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="value">
+      <div class="wrap section-grid">
+        <div><div class="section-no">03</div><h2>解决它，带来什么价值</h2></div>
+        <div class="body-copy">
+          <p>{{USER_VALUE}}</p>
+          <p><span class="tag real">真实资料</span>{{REAL_EVIDENCE}}</p>
+          <p><span class="tag estimate">估算</span>{{MARKET_ESTIMATE}}</p>
+          <p><span class="tag verify">待验证</span>{{VALUE_TO_VERIFY}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="wrap">
+        <div class="section-no">04</div><h2>Demo</h2>
+        <div class="demo-frame">
+          <!-- 找到真实截图后，用 <img src="相对路径" alt="Demo 关键画面"> 替换下面的占位区。 -->
+          <div class="demo-placeholder"><strong>请放入真实 Demo 截图</strong><span>{{DEMO_STEPS_AND_FALLBACK}}</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="wrap section-grid">
+        <div><div class="section-no">05</div><h2>下一步计划</h2></div>
+        <div><ol class="next-list"><li>{{NEXT_1}}</li><li>{{NEXT_2}}</li><li>{{NEXT_3}}</li></ol><p class="lead">{{CLOSING_LINE}}</p></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="pitch-controls" aria-label="Founder Pitch 页面控制"><button type="button" id="pitchPrev" title="上一页" aria-label="上一页">←</button><span class="pitch-count" id="pitchCount">1 / 5</span><button type="button" id="pitchNext" title="下一页" aria-label="下一页">→</button></div>
+
+  <footer><div class="wrap">Founder Pitch｜{{PROJECT_NAME}}</div></footer>
+
+  <script>
+    const pitchPages=[...document.querySelectorAll('main > section')];
+    const pitchPrev=document.getElementById('pitchPrev');
+    const pitchNext=document.getElementById('pitchNext');
+    const pitchCount=document.getElementById('pitchCount');
+    let pitchIndex=0;
+
+    function updatePitchControls(){
+      pitchCount.textContent=`${pitchIndex+1} / ${pitchPages.length}`;
+      pitchPrev.disabled=pitchIndex===0;
+      pitchNext.disabled=pitchIndex===pitchPages.length-1;
+      pitchPages.forEach((page,index)=>page.classList.toggle('pitch-active',index===pitchIndex));
+    }
+    function goToPitchPage(nextIndex){
+      pitchIndex=Math.max(0,Math.min(pitchPages.length-1,nextIndex));
+      updatePitchControls();
+    }
+    pitchPrev.addEventListener('click',()=>goToPitchPage(pitchIndex-1));
+    pitchNext.addEventListener('click',()=>goToPitchPage(pitchIndex+1));
+    document.addEventListener('keydown',event=>{
+      if(event.target.closest('input,select,textarea')) return;
+      if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();goToPitchPage(pitchIndex+1)}
+      if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();goToPitchPage(pitchIndex-1)}
+    });
+    document.addEventListener('contextmenu',event=>{
+      if(event.target.closest('input,select,textarea,button,a')) return;
+      event.preventDefault();
+      goToPitchPage(pitchIndex+1);
+    });
+    function fitPitchToViewport(){
+      const scale=Math.min(window.innerWidth/1600,window.innerHeight/900);
+      document.documentElement.style.setProperty('--pitch-scale',String(scale));
+    }
+    window.addEventListener('resize',fitPitchToViewport);
+    fitPitchToViewport();
+    updatePitchControls();
+  </script>
+</body>
+</html>
