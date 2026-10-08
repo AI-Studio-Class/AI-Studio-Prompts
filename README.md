@@ -14,7 +14,9 @@ AI-Studio-Class 团队的学生课堂提示词与配套 Skills。无需访问私
 
 同时向 Codex 提供要更新的 Skill 文件或完整目录，再复制这句话：
 
-> 请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/CONTRIBUTING.md，把我提供的 Skill 更新到该仓库，校验通过后只提交相关文件并推送。
+```text
+请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/CONTRIBUTING.md，把我提供的 Skill 更新到该仓库，校验通过后只提交相关文件并推送。
+```
 
 上传需要本人有本仓库写权限；读取和学生下载不需要权限。提示词不能代替 GitHub 授权，没有写权限时先联系团队管理员。
 
