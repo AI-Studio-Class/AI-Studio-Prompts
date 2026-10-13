@@ -1,92 +1,56 @@
 #!/usr/bin/env python3
-"""Validate the deterministic parts of Founder Pitch Studio outputs."""
-
-from __future__ import annotations
-
-import argparse
-import json
+"""Check package structure and local assets; semantic and visual review remain separate."""
+import argparse, json, re
+from html.parser import HTMLParser
 from pathlib import Path
-import re
-
-
-REQUIRED = [
-    "00_项目材料清单.md",
-    "01_发布大纲.md",
-    "02_Founder_Pitch.html",
-    "03_演讲稿_5分钟逐字版.md",
-    "04_演讲稿_3分钟精简版.md",
-    "05_演讲稿_关键词提示卡.md",
-    "06_投资人问答准备.md",
-    "pitch-settings.json",
-]
-
-STYLES = {
-    "studio-editorial-white", "midnight-product-launch", "future-lab",
-    "blueprint-workshop", "founder-newsroom", "mission-control",
-    "product-gallery", "investor-data-room", "field-notes",
-    "cinematic-founder-story",
-}
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default="founder-pitch-output")
-    args = parser.parse_args()
-    root = Path(args.output).expanduser().resolve()
-    errors: list[str] = []
-    warnings: list[str] = []
-
-    for name in REQUIRED:
-        path = root / name
-        if not path.exists():
-            errors.append(f"缺少文件：{name}")
-        elif path.stat().st_size < 40:
-            errors.append(f"文件几乎为空：{name}")
-
-    outline_path = root / "01_发布大纲.md"
-    if outline_path.exists():
-        outline = outline_path.read_text(encoding="utf-8", errors="replace")
-        for heading in ["解决的问题与痛点", "拟采用的解决方案", "解决该问题带来的价值", "Demo", "下一步计划"]:
-            if heading not in outline:
-                errors.append(f"发布大纲缺少：{heading}")
-        if not any(label in outline for label in ["[真实资料]", "[估算]", "[待验证]", "[未完成]"]):
-            warnings.append("发布大纲没有看到证据状态标签。")
-
-    html_path = root / "02_Founder_Pitch.html"
-    if html_path.exists():
-        html = html_path.read_text(encoding="utf-8", errors="replace")
-        if len(re.findall(r"<section\b", html, flags=re.I)) < 6:
-            errors.append("HTML 少于 6 个页面 section。")
-        for token in ["1600px", "900px", "ArrowRight", "ArrowLeft", "contextmenu"]:
-            if token not in html:
-                errors.append(f"HTML 缺少固定能力：{token}")
-        if re.search(r"\{\{\s*[A-Z0-9_]+\s*\}\}", html):
-            errors.append("HTML 仍包含未替换的模板占位符。")
-        remote_assets = re.findall(r"(?:src|href)=[\"']https?://", html, flags=re.I)
-        if remote_assets:
-            warnings.append("HTML 包含远程资源链接，请确认离线时仍可演讲。")
-
-    settings_path = root / "pitch-settings.json"
-    if settings_path.exists():
+from urllib.parse import unquote
+class Deck(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.pages=0; self.assets=[]; self.remote=[]
+    def handle_starttag(self,tag,attrs):
+        a=dict(attrs)
+        if 'slide' in a.get('class','').split(): self.pages+=1
+        for key in ('src','poster'):
+            if a.get(key): self.assets.append(a[key])
+        if tag=='link' and a.get('rel')=='stylesheet': self.assets.append(a.get('href',''))
+def main():
+    p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--expected-pages',type=int,default=6);a=p.parse_args()
+    root=Path(a.output).resolve();errors=[];warnings=[]
+    for name in ['02_Founder_Pitch.html','演讲提示卡.md','_working/outline.md','_working/evidence.md','_working/pitch-settings.json']:
+        if not (root/name).is_file():errors.append('缺少文件：'+name)
+    html=root/'02_Founder_Pitch.html'
+    if html.exists():
+        text=html.read_text(); d=Deck();d.feed(text)
+        if d.pages!=a.expected_pages: errors.append(f'页数 {d.pages}，预期 {a.expected_pages}')
+        if re.search(r'\{\{[A-Z_]+\}\}',text):errors.append('仍有模板占位符')
+        for asset in d.assets:
+            if asset.startswith('data:'):continue
+            if asset.startswith(('http:','https:','//')):errors.append('离线演示依赖远程资源：'+asset);continue
+            if not (root/unquote(asset.split('#')[0].split('?')[0])).is_file():errors.append('资源缺失：'+asset)
+    settings=root/'_working/pitch-settings.json'
+    if settings.exists():
         try:
-            settings = json.loads(settings_path.read_text(encoding="utf-8"))
-            style_id = settings.get("style_id")
-            if style_id not in STYLES:
-                errors.append(f"pitch-settings.json 中的 style_id 无效：{style_id}")
-        except (json.JSONDecodeError, OSError) as exc:
-            errors.append(f"pitch-settings.json 无法读取：{exc}")
-
-    full_path = root / "03_演讲稿_5分钟逐字版.md"
-    if full_path.exists():
-        full = full_path.read_text(encoding="utf-8", errors="replace")
-        for label in ["必说", "证据", "Demo动作"]:
-            if f"[{label}]" not in full and f"【{label}】" not in full:
-                warnings.append(f"5 分钟逐字稿缺少标记：{label}")
-
-    result = {"ok": not errors, "errors": errors, "warnings": warnings, "output": str(root)}
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0 if not errors else 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+            obj=json.loads(settings.read_text())
+            if not obj.get('style_id'):errors.append('未记录风格')
+            if obj.get('style_id')=='product-ui':
+                relative=obj.get('product_style_path','_working/product-style.json')
+                style_path=(root/relative).resolve()
+                if root not in style_path.parents:
+                    errors.append('产品风格记录必须在交付目录内')
+                elif not style_path.is_file():
+                    errors.append('product-ui缺少实际产品风格记录')
+                else:
+                    try:
+                        evidence=json.loads(style_path.read_text())
+                        if not evidence.get('sources') or not evidence.get('tokens'):
+                            errors.append('产品风格记录缺少来源或设计参数')
+                        if evidence.get('evidence_status') not in {'rendered','source-and-screenshots','source-only'}:
+                            errors.append('产品风格证据不足，不能声称已沿用产品UI')
+                        if evidence.get('evidence_status')=='source-only':
+                            warnings.append('产品风格仅按源码提取，尚未核实运行时画面')
+                    except (ValueError,OSError):
+                        errors.append('产品风格记录不可读取')
+        except ValueError:errors.append('设置JSON格式错误')
+    warnings.append('本检查不证明内容正确、交互有效或视觉合格；需实际浏览器与逐页看图')
+    print(json.dumps({'ok':not errors,'errors':errors,'warnings':warnings},ensure_ascii=False,indent=2));return int(bool(errors))
+if __name__=='__main__':raise SystemExit(main())

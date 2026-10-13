@@ -12,7 +12,7 @@
   "iterate": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我找出当前产品最值得改进的一点。\n让我选择后再动手，完成后带我试用并保存进度。",
   "ui": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我把当前产品的界面变得更清楚、好看。\n沿用产品名称和 Logo，保留已有功能。",
   "save": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，保存这次项目进度。\n告诉我哪些已完成、还有什么问题，以及下次从哪里继续。",
-  "pitch": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，把当前项目整理成完整的产品发布包。\n沿用已有资料和真实进度，帮我做发布页、讲稿和问答准备。",
-  "pitch-visual": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，优化现有发布页的视觉。\n保留产品事实和故事内容，让每一页完整、清楚地显示。",
-  "talk": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，按最终发布页更新讲稿、提示卡和问答。\n用我能自然讲出来的话，帮我准备彩排。"
+  "pitch": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，把当前项目做成六页 HTML 路演和演讲提示卡。\n沿用已有资料和真实进度。",
+  "pitch-visual": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，优化现有路演的视觉。\n保留产品事实和故事内容，让每一页完整、清楚地显示。",
+  "talk": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，按最终路演更新演讲提示卡。\n用我能自然讲出来的话，帮我准备彩排。"
 }

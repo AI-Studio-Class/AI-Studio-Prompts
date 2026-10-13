@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.2",
   "repository": "AI-Studio-Class/AI-Studio-Prompts",
   "ref": "main",
   "skills": [
@@ -63,18 +63,24 @@
       "path": "skills/pitch",
       "files": {
         "LICENSE.txt": "acb9134781dd0ca8840be62aecf38ddf0802e59db33004f2220f90b8c35a77d4",
-        "SKILL.md": "68b633aa2e8c131bca5c8c6b124edcd6c745bbcb94536a7fd30005ee4803ce91",
-        "agents/openai.yaml": "a7d1185af941b92b8192b344012e2801fe3acd52a4c37dd91e6eb8dc4932cff1",
-        "assets/pitch-template.html": "16aad32c2381bfdbb0eed095f7328bf6d98cf07b579f1a74ecbb4aea6b56c94d",
-        "assets/style-gallery.html": "b77601cc441f49d8e6accdbc59e86e04c1df551820ec7305b1a61e3260bfd935",
-        "references/html-contract.md": "f7fb1f87d68af922442cfbf3b2e37d77cf288a5fe78c5d0773009fa224b12dac",
-        "references/presentation-updates.md": "ae51ccb42047cf70ada4a0cbb6082bf75f01482f5b1df48c4ef6e807a22c9a84",
-        "references/project-contract.md": "819b3021723242241aa4d46e39c51072b882e31f2df335e50a530078603ea644",
-        "references/style-catalog.md": "524f67d0e930d2a927c992b5872d91f6ce46d54a4f687bdb3f24f4b360e40736",
-        "references/talk-track-contract.md": "f4f8b5d86ee660c9d4325fe86418b4b8bcf8331fe743651ec47d683ff2c40bc0",
-        "references/workflow-contract.md": "e3e5a50c79e241d0a50510207ce14f1e0c9a655beab24c2bebc561f1563aebae",
+        "SKILL.md": "59d5804bc5c1e0179d48951a16e2308e90fa212670c528bbdf3b75e87cfc2fec",
+        "agents/openai.yaml": "f7f01b63386703603b4d8853b4bf38390061d1485e7756ae7be731c5cd4d9d9b",
+        "assets/pitch-template.html": "be525d82e4aee5e7cd3ed676f8798c668fcaf8abe5364767b4318befdf5a0867",
+        "assets/pitch-themes.css": "caeca89f84f92ff2a2ec95dcab42cd6afc33bc03f341008511e7af08107ee4f3",
+        "assets/style-gallery.html": "4296568522f4bd6185dad65559394767c386dbbc435263fe0b1e04dec7f4b2b1",
+        "assets/style-presets.json": "6069d23eda1f30f66694a9e53c8b03a962b093dc89517623c01413520cc4b524",
+        "references/html-contract.md": "0f5848d44d4621bc594924c9e497ad48a6e7c8517fcf8fbea65e27238cba0382",
+        "references/presentation-updates.md": "d5fdcb670bfb7378dfbdb1b6a746f4a6a50ba8719d1b8d6526b37daa93ad8f5d",
+        "references/product-style.md": "44febaf4345688e8ecaaa2fd0d70688b15d1becd731f6a241f7f95683b291353",
+        "references/project-contract.md": "6515611aba69627a7b700ff56c148892a27b54386e0bec999a7984a83279ace3",
+        "references/style-catalog.md": "2694c49524637439183d6db833a1b7e61d6fbb0720eb0ce82d7099652a6763fd",
+        "references/talk-track-contract.md": "2985b79b6afede935a10f9f2f212af7e2cb30e76b82cb8da3b452680943a96cd",
+        "references/visual-finish.md": "9a9cf2bc61c2bafb732a4388fa4f9d36fddfc927b13fce315494969fafc55f40",
+        "references/workflow-contract.md": "b19e61a5d8768fd7d54447afe1baf38116de47c82aae5e691c9023c72055d30a",
+        "scripts/render-check.cjs": "ef4008ec279148c6d0a8dd5656eac609224613739d43ab146dcced2e680c0c35",
+        "scripts/scan_design.py": "5bc158e28279ebc4a3d74f95de88a30c6ebff22f502002addc2f89bf0c395ebe",
         "scripts/scan_project.py": "b989cb591a286b51f277a7167738bf0fda39dbfa7062e1300272b2e6f7859c9f",
-        "scripts/validate_outputs.py": "040737a0db3933abcc30a7c75c58c105dc1e2c842f810957d81186ffd10d8b0e",
+        "scripts/validate_outputs.py": "b2a880a5de478bdd445fb660d696d20b732f137af6a76203ca0bbf270d985cf8",
         "templates/项目主文件.md": "8b281f805bdb76b35a09f10d1664fb8479028e04099b9a82ee7a2705eca10699"
       }
     }

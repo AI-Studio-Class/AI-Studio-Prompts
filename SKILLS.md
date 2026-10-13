@@ -2,7 +2,7 @@
 
 把五天课程串在同一个孩子自己的本地项目中：创业方向 → TAM → 名称与 Logo → One-pager → 需求与开发计划 → 开发迭代 → Founder Pitch。
 
-课堂版本：**v1.2.1**。公开教学仓库为 https://github.com/AI-Studio-Class/AI-Studio-Prompts ，只分发课程 Skills、Prompt 和空白模板，不存放学生项目或学生记录。
+课堂版本：**v1.2.2**。公开教学仓库为 https://github.com/AI-Studio-Class/AI-Studio-Prompts ，只分发课程 Skills、Prompt 和空白模板，不存放学生项目或学生记录。
 
 ## 课前一次装齐
 
@@ -11,7 +11,7 @@
 | `startup-exploration` | Day 1：由当前 Agent 引导创业方向、首版、名字、Logo 与汇报；有本机工具时使用像素地图，否则使用对话模式 |
 | `aistudio-idea` | Day 1：约 20 分钟，孩子与 AI 一起确定方向，保存创业想法.md 和项目主文件.md |
 | `aistudio-project` | Day 1–4：读取既有项目，计算 TAM、取名、Logo 与 Slogan、逐步写开工文档、开发修复与迭代并保存进度 |
-| `pitch` | Day 4–5：读取主文件和当前证据，生成发布页、演讲稿、提示卡与问答 |
+| `pitch` | Day 4–5：读取主文件和真实证据，选择八种预设或沿用产品 UI，生成六页 HTML 路演和演讲提示卡；逐字稿与问答按需补充 |
 
 没有其他必须安装的 Skill；Codex 自带的代码、文件操作与可用图像能力按本机环境使用。Logo 无图像工具时可生成原创 SVG 初稿。
 
@@ -71,7 +71,7 @@ Mac 也可以在解压目录双击 `Install-Mac.command`；Windows 双击 `Insta
 ## 来源与维护
 
 - 创业方向教练基于团队的 [aistudio-idea](https://github.com/AI-Studio-Class/aistudio-idea)，保留对话与定位方法，加入本地文件交接。
-- 发布教练来自 [pitch-skill](https://github.com/narutopujian/pitch-skill)，基准提交 `25d87a7da702fbe9d696013aae5c8a73479fe83a`；保留其 MIT 许可与风格、HTML 和讲稿约定。
+- 发布教练最初来自 [pitch-skill](https://github.com/narutopujian/pitch-skill)，基准提交 `25d87a7da702fbe9d696013aae5c8a73479fe83a`；当前更新为团队提供的 pitch v6（2026-10-13），保留 MIT 许可与署名。
 - `aistudio-project`、统一 Prompt 与安装器为本课程新增。
 
 团员更新按 [CONTRIBUTING.md](https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/CONTRIBUTING.md) 执行，仅提交指定 Skill 和必要清单，运行公开仓库的 `python3 scripts/validate.py`。上传公共资源不等于更新已安装的学生电脑，请重新执行安装 Prompt。

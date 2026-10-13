@@ -1,48 +1,5 @@
-# Talk Track Contract
+# 演讲提示
 
-Keep every script aligned with the final HTML and this sequence: problem, solution, value, Demo, next step.
-
-## Five-Minute Full Script
-
-- Target 500–700 Chinese characters plus Demo actions.
-- Reserve 60–90 seconds for Demo.
-- Mark `[必说]`, `[证据]`, `[Demo动作]`, `[停顿]`, and `[可删]`.
-- Bold the 3–5 most important words in each section.
-- Keep individual spoken sentences short and natural.
-- List the opening sentence and closing sentence separately.
-
-## Three-Minute Concise Script
-
-- Keep one core sentence per page.
-- Keep one piece of evidence and one Demo result.
-- Remove background detail before removing the problem, value, or next validation step.
-- Target 280–420 Chinese characters plus Demo actions.
-
-## Keyword Cue Card
-
-For each page provide:
-
-- one `[必说句]`;
-- 3–5 keywords;
-- one evidence reminder;
-- one action or page cue.
-
-Fit the full cue card on one A4 page or one ordinary screen.
-
-## Investor Q&A
-
-Prepare concise answer frames for:
-
-1. Why is this a real problem?
-2. Who needs it most?
-3. What evidence do you have?
-4. Why is the current solution insufficient?
-5. What does the Demo prove?
-6. What remains unfinished?
-7. How large could the need be?
-8. What will you test next?
-9. What might make this fail?
-10. Why are you the right Founder to continue?
-
-Never manufacture certainty. Use “目前我们知道… / 还不知道… / 下一步会用…验证” when evidence is incomplete.
-
+默认只写一份 演讲提示卡.md，按最终六页顺序，每页一条必说句和至多两个提示。用讲述者能自然说出的短句，不套十道投资人问题和多版本逐字稿。
+TAM 提示要解释付费单位、年度价格、10%是假设而非承诺；Demo 提示说明操作、历史截图与联网失败时怎样继续。
+演讲时间优先用课堂已知要求；未知时不为了凑五分钟加词。额外三分钟/五分钟逐字稿、投资人问答仅按用户请求生成，事实与最终页面一致。可按已知语言习惯调整措辞和讲述节奏，但不按年龄调整幻灯片颗粒度。

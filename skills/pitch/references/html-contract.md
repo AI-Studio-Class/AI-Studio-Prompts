@@ -1,56 +1,29 @@
-# Founder Pitch HTML Contract
+# 专业 HTML 路演
 
-## Story and Identity
+## 视觉基准
 
-- Present a Founder speaking to investors, not a student reporting homework.
-- Keep the fixed order: problem, solution, value, Demo, next step.
-- Put the product name or literal offer in the first viewport.
-- Give each page one primary message.
+提炼自 beidian-approved-20260928 的方法：结论标题、统一版心、蓝色只强调重点、同页正文一个基准字号、按信息关系组织正文、实际截图复核。包内不包含旧客户内容、标志或整套母版，也不依赖某台电脑的路径。
+用户指定品牌/母版优先。有本地获准字体可内嵌；没有时使用清晰的系统中文字体并记录，不假称字体已加载。所有年龄共用相同信息颗粒度和成熟审美；年龄不触发简化版或复杂版。
+默认 1440×810，横向版心49px。正式路演标题约36–40px、正文约24–28px、来源16–18px，正式版38/26/16，现代产品主题42/26/16。基于投影环境选择合适字号，不把正文普遍放大为标题。各页正文统一，核心数字/主张通过 data-font-exception 声明大字例外。封面另定。
 
-## Fixed Canvas
+## 内容布局
 
-- Use a fixed `1600 × 900` logical canvas for every page.
-- Scale with `min(window.innerWidth / 1600, window.innerHeight / 900)`.
-- Show exactly one complete page at a time.
-- Disable document scrolling; never reveal part of an adjacent page.
-- Keep `scrollWidth <= 1600` and `scrollHeight <= 900` on every page.
-- Use dark letterboxing when the browser is not 16:9. Never stretch the canvas.
+每页一个主焦点，配足支持结论的必要信息。问题用用户→痛点来源→核心问题；方案用产品使用的输入→AI整理→结果，不画技术架构；TAM 用简化算式与份额图；Demo 用真实截图加对应操作标注；下一步让行动与要验证的问题对应。三栏不是默认答案。避免层层套框、装饰性大数字、冗余引导语、重复结论条、无意义渐变和卡通贴纸。
+正式汇报完成度取决于关系和证据：一眼看出原因如何汇聚、步骤如何相接、数字怎样算来或行动验证什么。只有大字和几句孤立短句、三张互不关联卡片，属于未完成设计。也不能为显专业再套多层分类。
+不设填满率，允许有意义留白。超出空间优先改表达和排布，不缩字号。每页主体一个 .slide-body；header/footer 分离。图片不拉伸，截图文字应能被讲述者指认。
 
-## Navigation
+## 视觉精修
 
-- `ArrowRight`, `PageDown`, or space: next page.
-- `ArrowLeft` or `PageUp`: previous page.
-- Right-click on noninteractive blank space: next page.
-- Keep previous, page count, and next controls at bottom right.
-- Do not let input, button, select, textarea, link, or Demo interactions trigger navigation.
+阅读 [视觉完成度](visual-finish.md)，在信息结构稳定后单独做一次视觉精修。不能把套上字体、边框和几个深色块视为已经完成美化。
 
-## Layout and Readability
+## 文件与交互
 
-- Use large projection-safe type and no negative letter spacing.
-- Keep titles to one or two complete lines.
-- Let primary content occupy approximately 70%–85% of the canvas height.
-- Distribute title, main visual/evidence, and conclusion vertically.
-- Do not pack content into the upper half and leave a large meaningless area below.
-- Prefer a stronger grid, larger explanatory visual, or evidence strip over blindly enlarging text.
-- Keep all text and images inside the canvas without clipping.
-- Use images and diagrams to explain the problem, flow, evidence, or Demo, not as decoration.
+默认单个可离线打开的 HTML；字体/图片内嵌，无 CDN/远程字体/追踪。可点击外部 Demo，但离线截图必须独立可用。若用户要求目录形式，资源只能用包内相对路径并一起交付。
+16:9 整体缩放，一次完整显示一页，页面不滚动。实现 window.deck.go(index)、方向键/PageUp/PageDown/空格、上一页下一页及页数、全屏/退出全屏；Esc 使用浏览器退出行为。输入框和按钮链接不误触翻页。全屏失败给可读提示，不能把放大浏览器区域称为系统全屏。首尾禁用越界按钮，hash 支持重载定位，打印隐藏控件显示所有页。
+模板仅提供骨架与交互，每个正文关系需自行设计，交付前清除占位符。
 
-## Product Truth
+## 验证
 
-- Keep all evidence labels visible.
-- Use a real project Demo when available.
-- Label a screenshot fallback clearly.
-- Never invent a feature or hide an incomplete path with visual polish.
-
-## Implementation
-
-- Produce one self-contained HTML file.
-- Use no CDN, remote font, tracker, or required network request.
-- Use project-relative paths for local media.
-- Preserve meaningful semantic HTML and accessible contrast.
-- Avoid decorative gradient blobs, excessive rounded cards, complex animation, and background music.
-
-## Required Checks
-
-Check all pages at `1280 × 720`, `1600 × 900`, and `1920 × 1080`. Verify canvas size, no overflow, page navigation, control disabled states, Demo interaction isolation, local media loading, content density, and final page visibility.
-
+运行包内 render-check.cjs（需要环境已有 Node/Playwright/浏览器），在1280×720、1440×810、1920×1080检查实际完整页面，并补一个非16:9窗口。支持 --contract 读取项目视觉约定。不要把某台机器运行时路径写入可分发文件。
+检查范围：资源、实际字号/裁切/溢出、页数；另外验证翻页、hash、全屏退出与控件隔离。保存实际截图与报告。
+人工逐页看：能否支持一段完整讲述而非只读提纲，图形是否承载分析而非装饰，第一眼是否核心观点，标题是否能说出口，图形关系是否无需读完才懂，Demo 是否可读，有无信息堆叠。新建整套可委派一次独立看图审查；没有能力则明确由主创复核。修复问题后再检查，不以自动通过宣称审美合格。

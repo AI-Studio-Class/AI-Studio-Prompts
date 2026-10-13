@@ -1,60 +1,33 @@
-# Evidence and Outline Contract
+# 内容与证据
 
-## Evidence Priority
+## 从资料到路演
 
-Use evidence in this order:
+先找到一条产品主线：为谁解决什么，用什么核心功能。每页只保留支持主线的信息。
+内部大纲每页包含：观众应记住的一句话、证据、主要关系、孩子的口述句。正文使用直接的结论标题；封面定位、问题陈述及 Demo 操作标题可用自然短句。标题给结论，正文给具体支持，不用大号文字再次改写同一结论。不要「从 X 到 Y」等修辞替代具体含义，不叠加引导语、主标题、副标题三套标题。
 
-1. Current runnable product and current source code.
-2. Recent test records, bug lists, version notes, and Git changes.
-3. Current product brief, requirements, task cards, and project Markdown.
-4. Older plans and early ideas.
+正文：核心结论、关键证据、必要假设。
+讲稿：解释、例子、演示操作和备用方案。
+备查：来源路径、工程验收、详细计算、其他功能和尚未确定的品牌状态。
+来源与关键限制用简短注释保留；健康、提醒等功能若上台，其影响理解的限制不能藏起来。没有讲到的功能无需列出整张限制表。
 
-When two sources conflict, prefer the newer direct evidence and note the conflict. Never treat an early intention as a completed feature.
+## 事实边界
 
-## Evidence Labels
+优先采用当前明确确认的方向；可运行产品/代码/测试决定实现状态。只有附件就按附件改写，注明未独立核验，不虚构执行检查。真实截图和 Logo 优先，缺失时说明，不用概念图冒充产品。
+观察、假设、估算、已实现和计划分开。没有访谈证据的痛点写「我们想解决…」或简短「需求待验证」。删掉工程细节不等于把测试结果改称用户效果。
 
-- `[真实资料]`: directly present in a current file, screenshot, test, or cited source.
-- `[估算]`: derived from explicit assumptions; show the formula and assumptions.
-- `[待验证]`: plausible but not yet checked with real evidence.
-- `[未完成]`: planned or partially built but unavailable in the current Demo.
-- `[未读取]`: referenced material exists but could not be opened.
+## TAM 与 10% 份额
 
-## Required Outline
+主画面最多两组主数字：整体年度 TAM；10% 份额的年度收入情景。中间只放一条算式，关键假设/口径紧邻数字。多情景表和推导放备查。
 
-Write `01_发布大纲.md` in this order:
+优先复用项目现有测算并核对算术与口径：目标付费单位数 × 每单位年度价格 = 年度 TAM。人数、家庭、账户不能混用；单位转换必须有依据或标明假设。数据年份与地区不省略到造成误导，不以全行业支出替代本产品可服务市场。
 
-### 1. 解决的问题与痛点
+若 TAM 是按本产品年价计算的潜在收入，则：10% 份额情景 = 同口径 TAM × 10%。也可展示「10% 的目标家庭全年按该价付费」。清楚说明这是条件假设、不是已获得份额或收入预测；收入不是利润。不再乘第二次付费率制造口径混乱。
+若已有 TAM 是宠物全行业支出等宽口径，先换成该产品的付费市场，不能直接声称能拿到行业金额的 10%。没有价格/基数则保留符号算式和待验证项，不捏造数字。沿用未复核旧估算须明确标注。
+四舍五入符合证据精度（通常 2–3 个有效数字），用未四舍五入数计算份额。所有年龄与所有风格都保留同样的 TAM 和 10% 情景解释。
 
-Use this sentence:
+## 页面取舍
 
-> 我们想帮助【谁】，在【什么时间或场景】，解决【具体卡点】，让他能够【想完成的事情】，最终从【使用前】变成【希望发生的改变】。
-
-Add 2–4 supporting observations and their evidence labels.
-
-### 2. 拟采用的解决方案
-
-Include one product definition, at most three core functions, a 3–5 step main path, and the boundary between software actions and human decisions.
-
-### 3. 解决问题带来的价值
-
-Include user value, an observable before/after change, and available market sizing. Do not present TAM as revenue. Label every number.
-
-### 4. Demo
-
-State the one value the Demo proves, 3–5 real steps, what the audience sees, a fallback, and unavailable parts.
-
-### 5. 下一步计划
-
-List three priorities: user validation, experience improvement, and missing evidence or technology.
-
-### 发布前检查
-
-List missing materials, contradictions, and decisions the Founder must eventually make. Do not pause the workflow for these items.
-
-## Writing Voice
-
-- Speak as a Founder to investors.
-- Use short, concrete sentences.
-- Avoid classroom language and empty business slogans.
-- Preserve the child's authentic judgment; do not imitate an adult executive.
-
+问题先用户后痛点；场景是解释工具，不强制早中晚或三个 persona。
+方案用一个核心功能闭环，不同时堆功能列表、流程图、架构和边界矩阵。
+Demo 用真实画面讲一个结果；一个按钮可链接已有产品，但不编造地址，不宣称未测试的在线可用性。
+下一步每条一个动作，标题与下面一句解释必须指向同一个目标，不把持续使用、提醒和付费塞进一个目标。不要强凑三个。保留计划状态，不能把计划试用人数说成已有用户。

@@ -1,134 +1,57 @@
 ---
 name: pitch
-description: Create a factual Founder Pitch package from an existing product project, or update only its presentation visuals or rehearsal materials when requested. Includes a fixed 16:9 HTML deck, talk tracks, cue cards and investor Q&A. Use for product presentations and rehearsal, not product UI development or website deployment.
+description: Create or refine a concise six-slide HTML founder pitch from an existing project, with an accessible story, consistent information depth for all ages, eight curated visual styles or inheritance from the current product UI, TAM and a conditional 10% market-share revenue scenario. Also supports visual-only and rehearsal updates.
 ---
 
 # Founder Pitch Studio
 
-Turn the current project into a complete Founder Pitch package. Preserve evidence, expose uncertainty, and keep the young creator in the role of Founder rather than student reporter.
+把项目变成孩子能讲清、可以用于正式路演的六页 HTML。重点先于完整性；每页一个核心观点、一种主要信息关系。以正式董事会/投资人材料的完成度呈现：有结论、有必要支持、有可视化关系；不能把大字、稀疏卡片与大面积留白当作专业。学生只需说「请用 $pitch 帮我做项目路演」，不要求复制工作流。
 
-## Choose the Requested Mode First
+## 先确定范围
 
-Short classroom requests are sufficient; never ask the child to paste the workflow or repeat known project background. First read `项目主文件.md` and [project-contract.md](references/project-contract.md), then the linked evidence relevant to this request. Reuse the confirmed name, confirmed Slogan, actual Logo, TAM scope/sources and current progress; distinguish vision, implemented, pending integration and unverified. A TAM assumption is not revenue or proven demand.
+读取 `项目主文件.md` 及 [项目衔接](references/project-contract.md)，复用用户、品牌、Logo、市场测算和实际进展。仅有 PDF 等材料时基于附件制作，记录证据边界，不冒充读过代码或跑过产品。只修改发布产物，不部署、不改产品功能。
 
-- **Full publishing package / 完整发布包:** use the full workflow below. Reuse an existing style choice; ask only when no style is selected.
-- **Presentation visuals / 发布页视觉:** read and follow [presentation-updates.md](references/presentation-updates.md), visual mode only.
-- **Rehearsal / 讲稿、提示卡、问答、彩排:** read the same reference, rehearsal mode only.
+- 完整制作：执行下方流程。
+- 仅视觉或彩排：[局部更新](references/presentation-updates.md)，保留授权范围外的内容。
+- 已有风格和表达偏好直接复用。不询问年龄或年级来决定信息量。没有风格选择时，展示同内容的八个预设视觉预览和「沿用产品 UI」选项供选择；明确要求直接制作则采用已知视觉标准并继续。
 
-Generate local presentation files; these requests do not authorize deployment. Every mode saves the actual output paths, performed checks and remaining gaps to the project master file without overwriting other sections.
+## 六页故事（默认顺序）
 
-## Nonnegotiable Behavior
+1. **封面**：真实 Logo、产品名、一句话定位（给谁、做什么）。不叠加口号、愿景和创作说明。
+2. **问题**：先点明目标用户，再讲没有产品时的一个核心痛点；确有必要再加最多两个次要痛点，不强凑多个场景。
+3. **方案**：对应核心痛点，只突出一个核心功能。用输入→AI作用→用户结果，或一个功能主视觉解释；最多两个紧密相关延展，不讲工程细节。
+4. **市场潜力**：整体 TAM、一条简化算式、获得 10% 份额的条件收入情景。同页清楚标识范围、年单位、关键假设与「假设情景，非收入预测」。见 [内容规则](references/workflow-contract.md)。不另设测试数量/工程价值页。
+5. **Demo**：一个真实关键操作与结果，以产品画面为主。截图注明历史截图，不能伪装成交互产品；操作脚本及失败备用方案放讲稿。
+6. **下一步**：1–3 个具体行动，优先级清楚，每个行动一句短话，不堆路线图、验收清单和结尾口号。
 
-- Ask at most one question during the entire workflow: the visual style choice.
-- Do not ask for missing facts. Mark them `[待验证]`, `[未完成]`, or `[未读取]` and continue.
-- Do not invent users, interviews, market numbers, tests, features, screenshots, revenue, or results.
-- Treat project files and recent working state as the source of truth.
-- Write in natural Chinese that a 9–14-year-old Founder can say aloud.
-- Preserve the story order: problem, solution, value, Demo, next step.
+用户明确改变结构时优先执行并记录。六页不是六种固定卡片。
 
-## Output Folder
+## 制作顺序
 
-Create or update `founder-pitch-output/` in the project root:
+1. 按需扫描相关资料（项目大时用 `scripts/scan_project.py`）；阅读 [内容规则](references/workflow-contract.md)。先写 `_working/outline.md`：每页结论、最多三个必要支持点、能让观众看懂的关系图、证据、准备口述的一句话；移出的内容进入 `_working/evidence.md`。
+2. 仅看六个标题，检查故事能否连读。子标题不是第二个观点。若一页讲两件重要的事，优先取舍而非缩字。让孩子决定强调点，不替孩子虚构个人经历或创业动机。
+3. 阅读 [视觉与 HTML](references/html-contract.md)。用 [风格选择](references/style-catalog.md) 中八个方向、沿用产品 UI 或孩子指定风格；需要选择时展示 `assets/style-gallery.html` 的同内容预览，允许自定义。选择「沿用产品 UI」时执行 [产品风格提取](references/product-style.md)，主动扫描当前项目设计并生成专属预览。
+4. 从 `assets/pitch-template.html` 复用画布和控制器，按内容关系重做正文。先渲染两张不同关系的代表页再完成全篇；内部校准后自主继续。
+5. 按 [讲稿规则](references/talk-track-contract.md) 写一份简短提示卡。默认只交付 `02_Founder_Pitch.html` 和 `演讲提示卡.md`；大纲、证据、设置及检查放 `_working/`。额外逐字稿、问答仅在用户需要时生成。
+6. 运行 `python3 scripts/validate_outputs.py --output <产物目录>`；使用可用浏览器运行 `node scripts/render-check.cjs <HTML> --out <检查目录> --expected-pages 6`，逐页看图并修复。另实测翻页、全屏与退出、不同窗口、Demo 控件不误翻页；不能把静态检查当视觉验收。无浏览器时记录未验证，不声称通过。
+7. 按项目约定增量保存发布入口和剩余缺口；按下方「聊天框导览」直接向讲述者解释最终PPT。默认目录 `founder-pitch-output/`。不要求学生重复填写主文件已有信息。
 
-1. `00_项目材料清单.md`
-2. `01_发布大纲.md`
-3. `02_Founder_Pitch.html`
-4. `03_演讲稿_5分钟逐字版.md`
-5. `04_演讲稿_3分钟精简版.md`
-6. `05_演讲稿_关键词提示卡.md`
-7. `06_投资人问答准备.md`
-8. `pitch-settings.json`
+## 统一信息颗粒度
 
-Do not overwrite unrelated project files.
+- 所有年龄使用同一套正式路演颗粒度：每页一个清楚的结论、足够支撑结论的必要信息，以及一组看得懂的关系。每页最多三个必要支持点，具体数量由内容决定，不按年龄增减。
+- 六页结构、证据标准、TAM 与 10% 条件收入情景、图表解释深度和视觉完成度均保持一致。小朋友、大朋友与成人不分简版和进阶版。
+- 用短句和准确的日常表达，但不设机械字数配额。每页要足够讲明白结论为什么成立，不能只剩大标题和几句提纲；也不能为了成人观众添加工程细节或术语。
+- 风格选择只改变字体、配色、构图和视觉语言，不改变事实、信息量或逻辑深度。复用已确认内容换风格时，先锁定文案与数据，再进行视觉精修。
+- 讲稿可按讲述者已知的语言习惯调整措辞、解释和节奏，不因此删减或扩充幻灯片内容。不需要专门询问年龄。
+- 旧设置中的 grade_band、grade_status 等字段不再参与内容决策，新设置不再生成这些字段。用户明确要求增减内容时，按本次具体指令处理。
 
-## Workflow
+## 聊天框导览（每次生成或修改 PPT 后）
 
-### 1. Scan the Project
+交付链接之后，直接在当前聊天框写一段短导览，不为此另建文件，也不把导览加入幻灯片。它帮助讲述者理解这份PPT要怎么讲。
 
-Run:
-
-```bash
-python3 <skill-dir>/scripts/scan_project.py --root . --output founder-pitch-output/00_项目材料清单.md
-```
-
-Replace `<skill-dir>` with this skill's directory. Read the resulting inventory first. First read `项目主文件.md` as the entrypoint and [project-contract.md](references/project-contract.md). Reuse its confirmed product name and Slogan, actual Logo path, TAM sources/assumptions and current document links. Do not ask the child to write a separate `项目发布资料.md`; if an old copy exists, treat it as historical evidence. Then inspect the relevant current files it identifies, prioritizing:
-
-1. requirements, product definitions, README files, notes, task cards, and Markdown;
-2. recent Git changes and the newest modified files;
-3. test notes, bug lists, version logs, screenshots, and Demo entrypoints;
-4. source code needed to understand what actually works.
-
-Ignore dependencies, caches, generated builds, and previous `founder-pitch-output/` content as evidence. Read binary Office files only when their contents are necessary and a suitable document tool is available.
-
-Read [workflow-contract.md](references/workflow-contract.md) before synthesizing evidence.
-
-### 2. Generate and Review the Outline
-
-Create `founder-pitch-output/01_发布大纲.md` using the five required sections. Include a compact source note and evidence status for every factual claim. Resolve contradictions by preferring newer direct project evidence; record unresolved conflicts under `发布前检查`.
-
-Review the outline before continuing:
-
-- identify a specific user, moment, block, desired action, and change;
-- keep at most three core features;
-- distinguish software work from human decisions;
-- distinguish TAM demand frequency from revenue;
-- describe only a Demo path that exists now;
-- keep three next steps, ordered by learning value.
-
-Do not stop for approval.
-
-### 3. Select One Visual Style
-
-Read [style-catalog.md](references/style-catalog.md). If `founder-pitch-output/pitch-settings.json` already contains a valid `style_id`, reuse it and do not ask again.
-
-Otherwise present all ten numbered style names with one sentence each and ask exactly:
-
-> 请选择一个 HTML 风格（回复 1–10 即可）。
-
-Wait for the answer. This is the workflow's only user decision. Save the chosen `style_id`, display name, and generation date in `pitch-settings.json`.
-
-If the user already named a style in the triggering request, save it and continue without asking.
-
-### 4. Generate the HTML Deck
-
-Read [html-contract.md](references/html-contract.md) and the chosen style entry. Use [pitch-template.html](assets/pitch-template.html) as the structural base. Create `02_Founder_Pitch.html` with six pages:
-
-1. cover and literal product promise;
-2. problem and observed pain;
-3. solution and human/software boundary;
-4. value and available evidence;
-5. real Demo or clearly labeled fallback;
-6. next step and closing line.
-
-Use project-local images when they help explain a claim. Do not use external CDNs or remote fonts. Keep every page at a fixed `1600 × 900` logical canvas, scale the whole canvas to the browser, and show one complete page at a time.
-
-Resolve the Logo path relative to the project root, and make the generated deck reference the real asset from its output folder (or copy the selected asset into that folder). Never label a missing asset as a completed Logo.
-
-Run the HTML checks in [html-contract.md]. When available, open the file in a browser and inspect every page at `1280 × 720`, `1600 × 900`, and `1920 × 1080`. Repair clipping, overflow, blank pages, distorted images, broken Demo interactions, and excessive bottom whitespace before continuing.
-
-### 5. Generate All Talk Tracks
-
-Read [talk-track-contract.md](references/talk-track-contract.md). Generate all four remaining Markdown files without another question:
-
-- a natural 5-minute full script;
-- a 3-minute concise script;
-- a one-page keyword cue card;
-- investor questions with evidence-safe answer frames.
-
-Keep every version aligned with the final HTML page order and facts.
-
-### 6. Validate and Finish
-
-Run:
-
-```bash
-python3 <skill-dir>/scripts/validate_outputs.py --output founder-pitch-output
-```
-
-Fix all errors. Then incrementally update `项目主文件.md` with the actual output paths, chosen style, performed validation and remaining gaps, following the project contract. Do not change the confirmed product direction or upgrade TAM hypotheses into facts. Report only:
-
-- the output folder path;
-- the selected style;
-- the files created;
-- remaining `[待验证]`, `[未完成]`, or `[未读取]` items;
-- whether browser visual checks were performed.
+- 从最终实际 HTML 的页数和内容生成，不照抄固定模板或旧大纲；通常是六页，用户改了页数就按实际输出。
+- 开头一句：「这份 PPT 共 X 页，帮你讲清……」，用本项目的具体目标补全。
+- 按实际页序列出，每页仅一句短话：「第 X 页｜用途：这页的具体核心内容」。将用途和内容自然合并，尽量控制在30–45个中文字，不堆多个小点。
+- 用日常语言解释，让孩子知道为什么讲这一页；不能只报「封面、问题、方案」等栏目名，也不要复制整页正文。数据和状态必须与成品一致，估算仍称估算，计划仍称计划。
+- 六页导览通常约200–300个中文字；最后最多补一行真实的操作提示或关键未完成项，不追加长篇生成过程。
+- 仅修改视觉时也给简短最终导览；仅问答/彩排且未生成或修改PPT时按本次请求回答，不强制重复导览。

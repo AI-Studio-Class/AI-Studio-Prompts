@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.2",
   "repository": "https://github.com/AI-Studio-Class/AI-Studio-Prompts",
   "items": [
     {
@@ -132,27 +132,27 @@
       "id": "chain-pitch",
       "title": "发布教练 · pitch",
       "day": 4,
-      "description": "读取主文件与最新真实证据，直接使用名称、Logo、已确认 Slogan 和 TAM。",
+      "description": "读取真实项目资料，选择八种预设风格或沿用产品 UI，生成六页 HTML 路演和演讲提示卡。",
       "prerequisite": "在同一个本地项目中运行，先读取并继续已有文件。",
-      "text": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，把当前项目整理成完整的产品发布包。\n沿用已有资料和真实进度，帮我做发布页、讲稿和问答准备。",
+      "text": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，把当前项目做成六页 HTML 路演和演讲提示卡。\n沿用已有资料和真实进度。",
       "skill_url": "https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md"
     },
     {
       "id": "chain-pitch-visual",
       "title": "调整发布页视觉",
       "day": 5,
-      "description": "沿用最终故事、身份与数据，更新视觉和讲稿后回写主文件。",
+      "description": "保留事实与故事，优化路演视觉并更新演讲提示卡；逐字稿和问答按需补充。",
       "prerequisite": "在同一个本地项目中运行，先读取并继续已有文件。",
-      "text": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，优化现有发布页的视觉。\n保留产品事实和故事内容，让每一页完整、清楚地显示。",
+      "text": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，优化现有路演的视觉。\n保留产品事实和故事内容，让每一页完整、清楚地显示。",
       "skill_url": "https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md"
     },
     {
       "id": "chain-talk",
-      "title": "更新讲稿、提示卡与问答",
+      "title": "更新演讲提示卡，准备彩排",
       "day": 5,
-      "description": "沿用最终故事、身份与数据，更新视觉和讲稿后回写主文件。",
+      "description": "保留事实与故事，优化路演视觉并更新演讲提示卡；逐字稿和问答按需补充。",
       "prerequisite": "在同一个本地项目中运行，先读取并继续已有文件。",
-      "text": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，按最终发布页更新讲稿、提示卡和问答。\n用我能自然讲出来的话，帮我准备彩排。",
+      "text": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md 的流程，按最终路演更新演讲提示卡。\n用我能自然讲出来的话，帮我准备彩排。",
       "skill_url": "https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/pitch/SKILL.md"
     }
   ]
