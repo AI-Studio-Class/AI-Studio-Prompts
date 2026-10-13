@@ -1,8 +1,36 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "repository": "AI-Studio-Class/AI-Studio-Prompts",
   "ref": "main",
   "skills": [
+    {
+      "name": "startup-exploration",
+      "path": "skills/startup-exploration",
+      "files": {
+        ".gitignore": "454761927b5d754c3a68402d2a866a45b929de451d0a047f08bcae00c2f822f4",
+        "SKILL.md": "d445ceec95dd74d474edfeb8384bee45471ea7db51f80579d560570cd4ae8fe5",
+        "package.json": "05aba1b0cacf059ced2284bb29213b6a615770631828f67e6e5caf62bccc6bdf",
+        "references/agent-protocol.md": "b7c42bdd19ac4a3bc538b19b9a61dc90344deae9fa8ddfc008f9465c08d204be",
+        "references/assets.md": "1eca4cda70c6f20c17aa3dc339d5f0819fc45c781230d098f1fcbe126070fff3",
+        "references/dialogue.md": "c4faacf31405f31f2cc9ceb823e1704895bf9533ab90c7302ba60c9046e26445",
+        "scripts/agent.mjs": "9603f7461dcf4b8945ea6f3edf67eaec5b4ff9f4884df89289ecf4d0c221cbdf",
+        "scripts/core.mjs": "a03a919bc323e6abc82a7a29fb13fc4cc52e7f7dfb96781e3d9a4d19dae7bc3d",
+        "scripts/open.mjs": "7bd62e1b8464a2396eb431dc591c605133ec80f1761b4a39d0050b6b5a61ff2b",
+        "scripts/server.mjs": "1b22fc54ce84fbf0faf0ad1278224710dcc882d8ac47e2097e5408e57fca7abc",
+        "tests/bridge.test.mjs": "7d8eca0e214ef3a7fdf0b2fcc3ba85625adbd132411915c40c82f62dd4232cad",
+        "ui/app.js": "a3e775b8aab22151912a59434e5c8cbf2e5a80a031f26ea4b4fe3d74e86f4a46",
+        "ui/assets/ai-studio-mark.svg": "026e9ede80b58d6fa21db7bdd976b93284276c95f34814021089f6103ed174fc",
+        "ui/assets/scenes/atlas-1.png": "d466485e329b68d8ccf3b377971930a3c1cc32aa2d39fe0ced3ff038b393ff95",
+        "ui/assets/scenes/atlas-2.png": "0dd9c77fb4d83043672897ec8255707e5138591c212f89f8c5aa085fdd2f5508",
+        "ui/assets/scenes/atlas-3.png": "0e26826933261a1289392d21d3a72b1cf2f272b6027737ad9e0eabdbdae1b6a4",
+        "ui/assets/scenes/atlas-4.png": "865c52627e21f9aa06aa3307d8f52d7079d276e5234dd29ecba79d56911a821c",
+        "ui/assets/scenes/atlas-5.png": "d4c437e779eba9b6a74199021b11a8a16cf1386ce64bedf600a8457a619e5229",
+        "ui/index.html": "3e7fd05a1751505e0ed3135262086dea857e501e1d72412e8d0e331aeda2755c",
+        "ui/map-scenes.js": "4cf3ba941ede907cfb55b65ce8c8c3dc3c458bb9f65d321fcd4034943cc0bcdf",
+        "ui/map.js": "090816000f09145547e3b1c8d18a9f9545acb7a324a1d13141aa311e425d03fe",
+        "ui/style.css": "74534d9f952f50d5f129e6607150a6233b75169fe233022df8a7e4379528d4e7"
+      }
+    },
     {
       "name": "aistudio-idea",
       "path": "skills/aistudio-idea",

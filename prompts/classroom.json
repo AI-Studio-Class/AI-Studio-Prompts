@@ -1,5 +1,6 @@
 {
-  "install": "请从 https://github.com/AI-Studio-Class/AI-Studio-Prompts 下载完整课堂资源，按 SKILLS.md 安装或更新三个 Skills 并校验。\n公开资源无需 GitHub 授权；本次只准备 Skills，不创建或上传学生项目。",
+  "install": "请从 https://github.com/AI-Studio-Class/AI-Studio-Prompts 下载完整课堂资源，按 SKILLS.md 和 manifest.json 安装或更新全部课堂 Skills 并校验，安装目录以当前 Agent 的实际配置为准。\n公开资源无需 GitHub 授权；本次只准备 Skills，不创建或上传学生项目。",
+  "startup-exploration": "请读取并使用 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/startup-exploration/SKILL.md，带我探索当前项目的创业方向。\n请获取完整 Skill，用你自己的 AI 能力引导；能运行本机地图就打开并持续处理我的回答，否则按对话模式进行。",
   "idea": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-idea/SKILL.md 的流程，和我一起打磨当前项目的 AI 创业方向。\n我们用约 20 分钟，选出两天先做的一条主线。",
   "tam": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮我估算当前项目的 TAM。\n沿用已有项目信息，算完帮我保存结果。",
   "brand": "请按 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/aistudio-project/SKILL.md 的流程，帮当前产品取名、做 Logo，最后选一句 Slogan。\n给我几个建议并解释各自的方向和理由，等我选定后帮我保存。",

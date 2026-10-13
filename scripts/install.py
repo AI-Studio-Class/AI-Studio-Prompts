@@ -102,7 +102,7 @@ def main() -> int:
         result = install(REPO, args.dest, check=args.check, dry_run=args.dry_run)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         if not args.check and not args.dry_run:
-            print('请在 Codex 新任务中确认三个 Skills 已可用；必要时刷新或重启应用。')
+            print(f'请在当前 Agent 的新任务中确认 {len(result["skills"])} 个 Skills 已可用；必要时刷新或重启应用。')
         return 0
     except Exception as error:
         print(f'安装未完成：{error}', file=sys.stderr)

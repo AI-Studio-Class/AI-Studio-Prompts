@@ -5,7 +5,7 @@ AI-Studio-Class 团队的学生课堂提示词与配套 Skills。无需访问私
 - [查看全部提示词及解释](prompt-catalog.json)
 - [课堂 Skills 安装说明](SKILLS.md)
 - [统一安装 Prompt](prompts/install.txt)
-- [创业方向](skills/aistudio-idea/SKILL.md) · [项目开发](skills/aistudio-project/SKILL.md) · [产品发布](skills/pitch/SKILL.md)
+- [创业方向探索（通用 Agent 版）](skills/startup-exploration/SKILL.md) · [创业方向教练](skills/aistudio-idea/SKILL.md) · [项目开发](skills/aistudio-project/SKILL.md) · [产品发布](skills/pitch/SKILL.md)
 - [团员更新说明](CONTRIBUTING.md)
 
 下载整个仓库 ZIP（Code → Download ZIP），或通过 git clone 下载。不要只下载一个 SKILL.md，它依赖同目录的 references、templates、assets 或 scripts。

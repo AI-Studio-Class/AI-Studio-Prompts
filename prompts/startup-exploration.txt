@@ -1,0 +1,2 @@
+请读取并使用 https://github.com/AI-Studio-Class/AI-Studio-Prompts/blob/main/skills/startup-exploration/SKILL.md，带我探索当前项目的创业方向。
+请获取完整 Skill，用你自己的 AI 能力引导；能运行本机地图就打开并持续处理我的回答，否则按对话模式进行。

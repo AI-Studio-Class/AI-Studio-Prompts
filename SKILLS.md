@@ -2,12 +2,13 @@
 
 把五天课程串在同一个孩子自己的本地项目中：创业方向 → TAM → 名称与 Logo → One-pager → 需求与开发计划 → 开发迭代 → Founder Pitch。
 
-课堂版本：**v1.2.0**。公开教学仓库为 https://github.com/AI-Studio-Class/AI-Studio-Prompts ，只分发课程 Skills、Prompt 和空白模板，不存放学生项目或学生记录。
+课堂版本：**v1.2.1**。公开教学仓库为 https://github.com/AI-Studio-Class/AI-Studio-Prompts ，只分发课程 Skills、Prompt 和空白模板，不存放学生项目或学生记录。
 
 ## 课前一次装齐
 
 | Skill | 使用时机 |
 |---|---|
+| `startup-exploration` | Day 1：由当前 Agent 引导创业方向、首版、名字、Logo 与汇报；有本机工具时使用像素地图，否则使用对话模式 |
 | `aistudio-idea` | Day 1：约 20 分钟，孩子与 AI 一起确定方向，保存创业想法.md 和项目主文件.md |
 | `aistudio-project` | Day 1–4：读取既有项目，计算 TAM、取名、Logo 与 Slogan、逐步写开工文档、开发修复与迭代并保存进度 |
 | `pitch` | Day 4–5：读取主文件和当前证据，生成发布页、演讲稿、提示卡与问答 |
@@ -18,8 +19,8 @@
 
 1. 每台学生电脑先安装并登录 Codex，准备 Python 3.9+（Windows 可用 Python Launcher）。可下载完整 ZIP；使用 git clone 时需 Git。
 2. 公开教学资源无需 GitHub 登录或私库授权。若当前 AI 无法联网下载，由助教下载完整 ZIP 并解压后安装，不要假装只读一个网页就已安装所有依赖。
-3. 阅读下载快照的 `manifest.json` 与 `scripts/install.py`，再按下面的直接安装命令一次安装三个 Skills；也可让 Codex 执行 [统一安装 Prompt](prompts/install.txt)。使用本机实际 Codex Skills 目录，已装旧版也需更新，不能只因同名 Skill 存在就跳过。此步骤由助教课前做，孩子上课直接使用。
-4. 在新任务中确认 aistudio-idea、aistudio-project、pitch 都可发现。必要时刷新/重启 Codex。安装报告验证文件完整，不代替应用端发现检查。学生启动 Prompt 提供完整公开文件地址。
+3. 阅读下载快照的 `manifest.json` 与 `scripts/install.py`，再按下面的直接安装命令一次安装四个 Skills；也可让当前 Agent 执行 [统一安装 Prompt](prompts/install.txt)。使用本机实际 Skills 目录，已装旧版也需更新，不能只因同名 Skill 存在就跳过。此步骤由助教课前做，孩子上课直接使用。
+4. 在新任务中确认 startup-exploration、aistudio-idea、aistudio-project、pitch 都可发现。必要时刷新/重启应用。安装报告验证文件完整，不代替应用端发现检查。学生启动 Prompt 提供完整公开文件地址。
 5. 为孩子准备一个本地项目目录，所有课堂窗口选择这个目录。文档会话和开发会话可不同，但不能各自创建一个新的项目副本。
 
 ### 不通过 Prompt 的直接安装
@@ -40,6 +41,12 @@ Mac 也可以在解压目录双击 `Install-Mac.command`；Windows 双击 `Insta
 安装前校验 `manifest.json` 列出的所有文件；相同版本重复运行不改文件；更新时先备份同名目录到 Skills 目录上一级的 `studio-skill-backups/`，中途失败恢复旧版本。不会改动其他 Skills。不要手动删除备份后再排查失败。
 
 ## 孩子只记一个文件
+
+### 创业方向探索的跨 Agent 使用
+
+`startup-exploration` 不需要 AI STUDIO 账号或额外模型 API，问答与总结使用当前 Agent 自身能力。地图模式需要 Node.js 18+、文件读写、终端和学生可访问的本机浏览器；没有这些工具时按 Skill 的对话流程使用。Logo 无生图能力时可用明确标注的矢量概念稿。其他 Agent 安装时用 `--dest` 指定该工具实际支持的 Skills 目录，不要统一假设都是 Codex；普通聊天工具可以直接读取 Skill 及其对话流程。
+
+### 项目交接
 
 `项目主文件.md` 是固定入口。每个环节先读取，结束时增量更新。它保存项目名称、已确认 Slogan、Logo 的真实文件路径、TAM 摘要与来源、核心 AI 主线、当前开发状态、Demo 入口和下一步。
 

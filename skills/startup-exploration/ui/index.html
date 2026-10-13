@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>创业方向探索 · AI STUDIO</title><link rel="icon" href="assets/ai-studio-mark.svg"><link rel="stylesheet" href="style.css"></head>
+<body>
+  <header class="topbar"><a class="brand" href="./" aria-label="创业方向探索首页"><img src="assets/ai-studio-mark.svg" alt="AI STUDIO"><span>创业方向探索</span></a><span id="save-state" role="status">正在读取本机进度…</span><button id="help">使用说明</button></header>
+  <main>
+    <div class="intro"><h1>让你的想法，一步步变清晰。</h1><p>你的想法做主，当前 Agent 陪你探索。</p></div>
+    <p id="error" class="error" role="alert" hidden></p>
+    <div class="adventure-layout">
+      <section class="map-panel" aria-label="探索地图"><div class="map-topline"><strong id="map-zone">想法营地</strong><button id="bag">探索记录</button></div><div id="world" class="scene-art"></div><div class="map-caption"><span id="phase">带上想法</span><span>AI STUDIO · EXPLORATION</span></div></section>
+      <section id="question-panel" class="question-panel" aria-label="当前关卡"></section>
+    </div>
+    <footer>图片随 Skill 保存在本地；问答和总结由当前 Agent 完成，不需要额外配置模型 API。</footer>
+  </main>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><header><h2 id="dialog-title"></h2><button id="close-dialog" aria-label="关闭弹窗">关闭</button></header><div id="dialog-content"></div></dialog>
+  <script type="module" src="app.js"></script>
+</body></html>
